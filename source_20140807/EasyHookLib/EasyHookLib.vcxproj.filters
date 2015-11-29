@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\LocalHook">
+      <UniqueIdentifier>{78b56600-ebf5-4af7-aa11-a4ad16472a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RemoteHook">
+      <UniqueIdentifier>{ea3a9874-470a-4e14-8cd6-16ff4cb44b8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rtl">
+      <UniqueIdentifier>{efc590c1-528d-4e6d-916e-4d7c4c425c3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ASM">
+      <UniqueIdentifier>{45845268-6f8b-47aa-b265-16b09a01b927}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalHook\acl.c">
+      <Filter>Source Files\LocalHook</Filter>
+    </ClCompile>
+    <ClCompile Include="LocalHook\debug.cpp">
+      <Filter>Source Files\LocalHook</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteHook\driver.cpp">
+      <Filter>Source Files\RemoteHook</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteHook\entry.cpp">
+      <Filter>Source Files\RemoteHook</Filter>
+    </ClCompile>
+    <ClCompile Include="gacutil.cpp">
+      <Filter>Source Files\RemoteHook</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteHook\service.c">
+      <Filter>Source Files\RemoteHook</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteHook\stealth.c">
+      <Filter>Source Files\RemoteHook</Filter>
+    </ClCompile>
+    <ClCompile Include="RemoteHook\thread.c">
+      <Filter>Source Files\RemoteHook</Filter>
+    </ClCompile>
+    <ClCompile Include="Rtl\file.c">
+      <Filter>Source Files\Rtl</Filter>
+    </ClCompile>
+    <ClCompile Include="Rtl\memory.c">
+      <Filter>Source Files\Rtl</Filter>
+    </ClCompile>
+    <ClCompile Include=".\DriverShared\LocalHook\alloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include=".\DriverShared\LocalHook\barrier.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include=".\DriverShared\LocalHook\caller.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include=".\DriverShared\LocalHook\install.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include=".\DriverShared\LocalHook\reloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include=".\DriverShared\LocalHook\uninstall.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include=".\DriverShared\Rtl\error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include=".\DriverShared\Rtl\string.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Public\easyhook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ntstatus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include=".\DriverShared\DriverShared.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include=".\DriverShared\rtl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include=".\DriverShared\ASM\HookSpecific_x64.asm">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include=".\DriverShared\ASM\HookSpecific_x86.asm">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include=".\DriverShared\ASM\ILD_x64.asm">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include=".\DriverShared\ASM\ILD_x86.asm">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

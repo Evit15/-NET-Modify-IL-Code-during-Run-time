@@ -1,0 +1,8 @@
+LIBRARY
+EXPORTS
+   UpdateILCodes					@1
+   IsInitialized					@2
+   WaitForIntializationCompletion   @3
+   IsInjectionSucceeded				@4
+   GetErrorMessage					@5
+   __CollectAddress					@6

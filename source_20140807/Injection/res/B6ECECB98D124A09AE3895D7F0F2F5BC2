@@ -1,0 +1,13 @@
+LoadedMethodDescIterator::Current=4941625
+LoadedMethodDescIterator::LoadedMethodDescIterator=4792930
+LoadedMethodDescIterator::Next=4941721
+LoadedMethodDescIterator::Start=4941590
+MethodDesc::ContainsGenericVariables=149097
+MethodDesc::GetDomain=54454
+MethodDesc::GetLoaderModule=746989
+MethodDesc::GetNumGenericMethodArgs=59404
+MethodDesc::GetWrappedMethodDesc=167439
+MethodDesc::HasClassOrMethodInstantiation=59782
+MethodDesc::IsGenericMethodDefinition=54181
+MethodDesc::Reset=2617645
+MethodDesc::StripMethodInstantiation=390622

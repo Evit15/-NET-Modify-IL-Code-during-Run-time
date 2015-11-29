@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="Injection.def">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="res\3ABB7ADB9CCBCD24D6C55201A3842A94">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\75BCC4043512E41D83C8F224B168039C">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\215CE077258CEDD5BE4C56E9D614DB9F">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\781BF72F57CC9E5F85CB109C24D00FDC">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\836B8F87DC42AD95D4FE95BD1E374DF2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\4552F8F61A7975C2359D19673483604D">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\A05C0003E8D7CEA359A439690554F8BB">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\CF96AE49A34CE525D735A2666FF53CD6">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\1C88CF5977C016A37BFAC1178DAA7822">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\7F701A5B3B7A7A2F962C01434360F5C5">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\26B04A48905D01AB93E62B8C6913793E">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\59D16FD61802739988728790BF1232B3">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\79E8025D1F2B0F8691C222DAC135D26E">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\371F93342A4BBA90CDB2E93F84C025DE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\96076B8FCDFF3C6DB4CCFBF7FE3A9B28">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\951500AD4685B89423AB52665CADF653">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\AD6B6C89CC0A53338E000CC887610D71">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\B560A085EED4D5D72B039929F9AE4991">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\B155251C48DEAB9492F91B32DACE2576">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\BE7DFCC43C5A2C214B50165F933559A6">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\E4A1EF32903C4CC840121F4F5027FF0A">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\EA8332A740B8737C4C473C889C86DCB2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\F64FD5C7FEF7FC25CBA37974FF3584D7">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\F43F70AF86B02890FCF95ED91EA373BB">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\1BC333D76444B51B01A74B7447ADBC9E">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\B00FFB4355B1364656FB52CFF88199DE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DC42EA5012610F559F4A433BD4AA399C">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\EF5B2B3E4C0EA504A49C34D826319221">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\89BAB052AB7A36EC05D8E8DB79115B1D">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\88565B7C81145709F919AB75EAE004B6">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\A4ED0EF4828C874B45896018E523CDE6">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\EE3C31EAD84019600DD65D3E8A3E9744">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\1A7C5BC4840374B11698A414FE04A6EE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\42A5549F92DD52A1F75470E4A38B5A49">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\44A38DA547FBFEB2F2B3D480728805DE">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\102A78CB6405B22FF019ED8465C14B1F">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\A696FF8482F1F23C6C883116FD0C417D">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\AF2D82D297609DF60469BFAE48645762">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\01A2B1CAA27F9ACA9F256DAC6C11E493">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\1BD5FD7082BB348F9FAF493B6DF6E3BF">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\004D1D9A6FA07E489B4A58736BCBD2AF">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\5DA46042E4E8FAE64F30213530137002">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\34460D340829C7AAF75385AF1F626307">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\BE25FA9D4F2E989CC07A869EB0C9EB8E">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\C0775067EF2564BEF11FCB09ECE1A3B2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\D146C378AEC2D1570A4E4F81E2B621B3">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\3787A4BC97CE6C630F4B581425223D96">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\C42AE64F5DB6BC5E947B7E3E1B1E633E">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\3A2F5C8666F08B31C61DBAE9C297551C">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\3CA4ADDA47D97DDF412893F1D03EA6F6">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Injection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PdbHelper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolAddressCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Injection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PdbHelper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolAddressCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Injection.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
