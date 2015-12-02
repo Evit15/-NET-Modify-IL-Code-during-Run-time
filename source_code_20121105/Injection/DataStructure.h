@@ -19,6 +19,9 @@ enum DotNetVersion
 
 	// .Net Framework 4.5
 	DotNetVersion_45,
+
+	// .Net Framework 4.6
+	DotNetVersion_46,
 };
 extern DotNetVersion g_tDotNetVersion;
 extern HMODULE g_hJitModule;
@@ -131,7 +134,57 @@ public:
 
 ////////////////////////////////////////////////////////////////////
 /// LoadedMethodDescIterator
-enum AssemblyIterationMode { AssemblyIterationMode_Default = 0 };
+enum AssemblyIterationMode
+{
+	// Default, used by debugger's breakpoint controller.  Iterates through all
+	// Assemblies associated with the specified AppDomain
+	kModeAllADAssemblies,
+
+	// Iterate through only the *unshared* assemblies associated with the specified
+	// AppDomain.
+	kModeUnsharedADAssemblies,
+
+	// Rather than iterating through Assemblies associated with an AppDomain, just
+	// iterate over all Assemblies associated with the SharedDomain
+	kModeSharedDomainAssemblies,
+};
+enum AssemblyIterationFlags
+{
+	// load status flags
+	kIncludeLoaded        = 0x00000001, // include assemblies that are already loaded
+	// (m_level >= code:FILE_LOAD_DELIVER_EVENTS)
+	kIncludeLoading       = 0x00000002, // include assemblies that are still in the process of loading
+	// (all m_level values)
+	kIncludeAvailableToProfilers
+	= 0x00000020, // include assemblies available to profilers
+	// See comment at code:DomainFile::IsAvailableToProfilers
+
+	// Execution / introspection flags
+	kIncludeExecution     = 0x00000004, // include assemblies that are loaded for execution only
+	kIncludeIntrospection = 0x00000008, // include assemblies that are loaded for introspection only
+
+	kIncludeFailedToLoad  = 0x00000010, // include assemblies that failed to load 
+
+	// Collectible assemblies flags
+	kExcludeCollectible   = 0x00000040, // Exclude all collectible assemblies
+	kIncludeCollected     = 0x00000080, 
+	// Include assemblies which were collected and cannot be referenced anymore. Such assemblies are not 
+	// AddRef-ed. Any manipulation with them should be protected by code:GetAssemblyListLock.
+	// Should be used only by code:LoaderAllocator::GCLoaderAllocators.
+
+};  // enum AssemblyIterationFlags
+enum ModuleIterationOption
+{
+	// include only modules that are already loaded (m_level >= FILE_LOAD_DELIVER_EVENTS)
+	kModIterIncludeLoaded                = 1,
+
+	// include all modules, even those that are still in the process of loading (all m_level values)
+	kModIterIncludeLoading               = 2,
+
+	// include only modules loaded just enough that profilers are notified of them.
+	// (m_level >= FILE_LOAD_LOADLIBRARY).  See comment at code:DomainFile::IsAvailableToProfilers
+	kModIterIncludeAvailableToProfilers  = 3,
+};
 
 class LoadedMethodDescIterator
 {
@@ -139,6 +192,7 @@ class LoadedMethodDescIterator
 
 	typedef void (LoadedMethodDescIterator::*PFN_LoadedMethodDescIteratorConstructor)(AppDomain * pAppDomain, Module *pModule,	mdMethodDef md);
 	typedef void (LoadedMethodDescIterator::*PFN_LoadedMethodDescIteratorConstructor_v45)(AppDomain * pAppDomain, Module *pModule,	mdMethodDef md, AssemblyIterationMode mode);
+	typedef void (LoadedMethodDescIterator::*PFN_LoadedMethodDescIteratorConstructor_v46)(AppDomain * pAppDomain, Module *pModule,	mdMethodDef md, AssemblyIterationMode mode, AssemblyIterationFlags a, ModuleIterationOption b);
 	typedef void (LoadedMethodDescIterator::*PFN_Start)(AppDomain * pAppDomain, Module *pModule, mdMethodDef md);
 	typedef BOOL (LoadedMethodDescIterator::*PFN_Next_v4)(LPVOID pParam);
 	typedef BOOL (LoadedMethodDescIterator::*PFN_Next_v2)(void);
@@ -151,7 +205,9 @@ public:
 		if( s_pfnConstructor )
 			(this->*s_pfnConstructor)( pAppDomain, pModule, md);
 		if( s_pfnConstructor_v45 )
-			(this->*s_pfnConstructor_v45)( pAppDomain, pModule, md, AssemblyIterationMode_Default);
+			(this->*s_pfnConstructor_v45)( pAppDomain, pModule, md, kModeAllADAssemblies);
+		if( s_pfnConstructor_v46 )
+			(this->*s_pfnConstructor_v46)( pAppDomain, pModule, md, kModeAllADAssemblies, (AssemblyIterationFlags)(kIncludeLoaded | kIncludeExecution), kModIterIncludeLoaded);
 	}
 
 	void Start(AppDomain * pAppDomain, Module *pModule, mdMethodDef md) 
@@ -182,6 +238,9 @@ private:
 	// constructor for .Net4.5
 	static PFN_LoadedMethodDescIteratorConstructor_v45 s_pfnConstructor_v45;
 
+	// constructor for .Net4.6
+	static PFN_LoadedMethodDescIteratorConstructor_v46 s_pfnConstructor_v46;
+
 	static PFN_Start s_pfnStart;
 	static PFN_Next_v4 s_pfnNext_v4;
 	static PFN_Next_v2 s_pfnNext_v2; 
@@ -204,6 +263,9 @@ public:
 			case DotNetVersion_45:
 				pDest = (LPVOID*)&(LoadedMethodDescIterator::s_pfnConstructor_v45);
 				break;
+			case DotNetVersion_46:
+				pDest = (LPVOID*)&(LoadedMethodDescIterator::s_pfnConstructor_v46);
+				break;
 
 			default:
 				ATLASSERT(FALSE);
@@ -220,6 +282,7 @@ public:
 
 			case DotNetVersion_40:
 			case DotNetVersion_45:
+			case DotNetVersion_46:
 				pDest = (LPVOID*)&(LoadedMethodDescIterator::s_pfnNext_v4);
 				break;
 
@@ -239,7 +302,7 @@ public:
 
 	static BOOL IsInitialized(void)
 	{
-		return (s_pfnConstructor || s_pfnConstructor_v45) &&
+		return (s_pfnConstructor || s_pfnConstructor_v45 || s_pfnConstructor_v46) &&
 			(s_pfnNext_v4 || s_pfnNext_v2) &&
 			s_pfnCurrent;
 	}

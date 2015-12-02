@@ -19,6 +19,7 @@ MethodDesc::PFN_GetLoaderModule MethodDesc::s_pfnGetLoaderModule = NULL;
 
 LoadedMethodDescIterator::PFN_LoadedMethodDescIteratorConstructor LoadedMethodDescIterator::s_pfnConstructor = NULL;
 LoadedMethodDescIterator::PFN_LoadedMethodDescIteratorConstructor_v45 LoadedMethodDescIterator::s_pfnConstructor_v45 = NULL;
+LoadedMethodDescIterator::PFN_LoadedMethodDescIteratorConstructor_v46 LoadedMethodDescIterator::s_pfnConstructor_v46 = NULL;
 LoadedMethodDescIterator::PFN_Start LoadedMethodDescIterator::s_pfnStart = NULL;
 LoadedMethodDescIterator::PFN_Next_v4 LoadedMethodDescIterator::s_pfnNext_v4 = NULL;
 LoadedMethodDescIterator::PFN_Next_v2 LoadedMethodDescIterator::s_pfnNext_v2 = NULL;
@@ -58,6 +59,10 @@ BOOL DetermineDotNetVersion(void)
 					g_tDotNetVersion = DotNetVersion_40;
 				else
 					g_tDotNetVersion = DotNetVersion_45;
+				return TRUE;
+			}else if (nMajor == 4 && nMinor == 6 && nBuildMajor == 1038)
+			{
+				g_tDotNetVersion = DotNetVersion_46;
 				return TRUE;
 			}
 		}

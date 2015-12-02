@@ -62,6 +62,7 @@ BOOL CSymbolAddressCache::TryCache(void)
 
 	LOAD_OFFSET(LoadedMethodDescIterator::s_pfnConstructor);
 	LOAD_OFFSET(LoadedMethodDescIterator::s_pfnConstructor_v45);
+	LOAD_OFFSET(LoadedMethodDescIterator::s_pfnConstructor_v46);
 	LOAD_OFFSET(LoadedMethodDescIterator::s_pfnStart);
 	LOAD_OFFSET(LoadedMethodDescIterator::s_pfnNext_v4);
 	LOAD_OFFSET(LoadedMethodDescIterator::s_pfnNext_v2);
@@ -231,6 +232,7 @@ void CSymbolAddressCache::GenerateClrCache(void)
 
 	SAVE_OFFSET(LoadedMethodDescIterator::s_pfnConstructor);
 	SAVE_OFFSET(LoadedMethodDescIterator::s_pfnConstructor_v45);
+	SAVE_OFFSET(LoadedMethodDescIterator::s_pfnConstructor_v46);
 	SAVE_OFFSET(LoadedMethodDescIterator::s_pfnStart);
 	SAVE_OFFSET(LoadedMethodDescIterator::s_pfnNext_v4);
 	SAVE_OFFSET(LoadedMethodDescIterator::s_pfnNext_v2);
